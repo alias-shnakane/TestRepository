@@ -7,9 +7,9 @@ data "aws_iam_policy_document" "allow_describe_regions" {
   }
 }
 
-module "describe_regions_for_ec2_2" {
+module "describe_regions_for_ec2_3" {
   source     = "./iam_role"
-  name       = "describe-regions-for-ec2_2"
+  name       = "describe-regions-for-ec2_3"
   identifier = "ec2.amazonaws.com"
   policy     = data.aws_iam_policy_document.allow_describe_regions.json
 }
