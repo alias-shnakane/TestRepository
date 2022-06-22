@@ -35,4 +35,4 @@ jobs:
           terraform init
           terraform plan
       - name: Terraform Apply
-        run: terraform apply
+        run: terraform apply -auto-approve
