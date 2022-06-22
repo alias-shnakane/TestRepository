@@ -5,23 +5,23 @@ resource "aws_instance" "default" {
   vpc_security_group_ids = [aws_security_group.default.id]
   instance_type          = var.instance_type
 
-  user_data =  file("./http_server/user_data.sh")
+  user_data = file("./http_server/user_data.sh")
 }
 
 resource "aws_security_group" "default" {
   name = "ec2"
 
   ingress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
